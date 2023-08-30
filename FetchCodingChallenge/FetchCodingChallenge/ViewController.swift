@@ -142,23 +142,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 //
     }
     
-    //metodo que activa el poder mover las celdas
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    // metodo que mueve lor elementos del arreglo
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        //** Recordar que la lista que retorna no se puede modificar, en la app hacer la modificacion
-        //var lista = IngresosModel.getList()
-        meals.swapAt(sourceIndexPath.row, destinationIndexPath.row)
-    }
-    
-    //metodo que activa el eliminar los objetos de la tableView
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
     func showAlert(){
         let alert = UIAlertController(title: "Alert", message: "No data", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))

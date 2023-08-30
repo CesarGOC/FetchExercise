@@ -71,21 +71,16 @@ class TapViewController: UIViewController {
                     let decoder = JSONDecoder()
                     let mealResponse = try decoder.decode(MealsResponse2.self, from: data)
                     
-                    //let meal = mealResponse
                     self.meals = mealResponse.meals
                     DispatchQueue.main.async {
-                        //self.ingredientsLabel.text = self.meals[0].strIngredient1
+                        
                         let ingredientList1 = self.ingredientList(self.meals[0].strIngredient1, self.meals[0].strIngredient2, self.meals[0].strIngredient3, self.meals[0].strIngredient4, self.meals[0].strIngredient5, self.meals[0].strIngredient6, self.meals[0].strIngredient7, self.meals[0].strIngredient8, self.meals[0].strIngredient9, self.meals[0].strIngredient10)
                         let ingredientList2 = self.ingredientList2(self.meals[0].strIngredient11, self.meals[0].strIngredient12, self.meals[0].strIngredient13, self.meals[0].strIngredient14, self.meals[0].strIngredient15, self.meals[0].strIngredient16, self.meals[0].strIngredient17, self.meals[0].strIngredient18, self.meals[0].strIngredient19, self.meals[0].strIngredient20)
                         
                         
                         
-                            self.ingredientsLabel.text = String(ingredientList1)
-                            self.ingredienteLabel2.text = String(ingredientList2)
-//                        let firstPart = ingredientList.prefix(upTo: middleIndex)
-//                        let secondPart = ingredientList.suffix(from: middleIndex)
-//                        self.ingredientsLabel.text = String(firstPart)
-//                        self.ingredienteLabel2.text = String(secondPart)
+                        self.ingredientsLabel.text = String(ingredientList1)
+                        self.ingredienteLabel2.text = String(ingredientList2)
                         self.prepareLabel.text = self.meals[0].strInstructions
                     }
                 } catch {
